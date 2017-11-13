@@ -1,0 +1,1 @@
+web: gunicorn DocServer.wsgi --log-file -
