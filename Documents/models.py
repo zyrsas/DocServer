@@ -1,8 +1,8 @@
 from django.db import models
 from django.core.files.storage import FileSystemStorage
-from DocServer.settings import BASE_DIR
+from DocServer.settings import STATIC_URL
 
-fs = FileSystemStorage(location=BASE_DIR+'/files/')
+fs = FileSystemStorage(location=STATIC_URL + '/files/')
 
 
 class Document(models.Model):
