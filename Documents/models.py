@@ -7,6 +7,11 @@ class Document(models.Model):
     extension = models.CharField(max_length=10)
     dateOfModification = models.DateTimeField()
 
+    def save(self, *args, **kwargs):
+        print(self.name)
+        self.name = "Changed"
+        super(Document, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.name + "." + self.extension
 
