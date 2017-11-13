@@ -1,12 +1,9 @@
 from django.db import models
-from django.core.files.storage import FileSystemStorage
-
-#fs = FileSystemStorage(location=STATIC_URL + '/files/')
 
 
 class Document(models.Model):
     name = models.CharField(max_length=100)
-    file = models.FileField()
+    file = models.FileField(upload_to='files')
     extension = models.CharField(max_length=10)
     dateOfModification = models.DateTimeField()
 

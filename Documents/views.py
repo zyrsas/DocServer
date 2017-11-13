@@ -7,6 +7,7 @@ from django.core.files import File
 from Documents.models import Document
 from Documents.serializers import DocumentSerializer
 from DocServer.settings import BASE_DIR
+from django.shortcuts import render_to_response
 import binascii
 import datetime
 
@@ -28,7 +29,7 @@ def GetBytesArray(request):
 
         return Response({"File": binascii.hexlify(b)})
     except ValueError:
-        return Response({"File": str(b)})
+        return Response({"File": "Error"})
 
 
 @api_view(['GET'])
