@@ -2,7 +2,7 @@ from django.db import models
 from django.core.files.storage import FileSystemStorage
 from DocServer.settings import BASE_DIR
 
-fs = FileSystemStorage(location=BASE_DIR+'/files/doc')
+fs = FileSystemStorage(location=BASE_DIR+'/files/')
 
 
 class Document(models.Model):
