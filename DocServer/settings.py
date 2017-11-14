@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'DocServer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'doc_online',
-        'USER': 'admin',
+        'USER': 'root',
         'PASSWORD': '12345',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '3306',
     }
 }
 

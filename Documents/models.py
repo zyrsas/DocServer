@@ -9,11 +9,14 @@ class Document(models.Model):
 
     def save(self, *args, **kwargs):
         print(self.name)
-        self.name = "Changed"
+        print(self.file.name)
+        tmp = str(self.file.name).split('.')
+        self.name = tmp[0]
+        self.extension = tmp[1]
         super(Document, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.name + "." + self.extension
+        return self.name + "." + self.extension + " : " + str(self.dateOfModification)
 
 
 class User(models.Model):

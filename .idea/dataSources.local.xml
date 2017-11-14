@@ -10,5 +10,15 @@
       <user-name>admin</user-name>
       <introspection-schemas>doc_online:public</introspection-schemas>
     </data-source>
+    <data-source name="doc_online@localhost [2]" uuid="8566434f-6796-486b-9250-cbe96cd98a1f">
+      <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:doc_online</introspection-schemas>
+    </data-source>
   </component>
 </project>
