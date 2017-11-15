@@ -25,7 +25,7 @@ SECRET_KEY = 'c$m+i^c3)3-y(sxjm=oh_l*1+ku--z3^25sgf2zq-gli&jdl&#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'zyrsas.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'zyrsas.pythonanywhere.com', '0.0.0.0', '10.1.1.121']
 
 DEFAULT_FILE_STORAGE = 'database_files.storage.DatabaseStorage'
 
@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'DocServer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'doc_online',
+        'NAME': 'doc_online2',
         'USER': 'root',
         'PASSWORD': '12345',
         'HOST': 'localhost',
