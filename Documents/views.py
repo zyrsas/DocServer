@@ -100,7 +100,9 @@ def SignIn(request):
                                                                                                'name',
                                                                                                'departmen_id',
                                                                                                'departmen__name')
-                return JsonResponse(json.dumps(list(data_for_json), indent=2))
+                tmp = list(data_for_json)[0]
+            
+                return Response(tmp)
         except KeyError:
             return Response({"SignIn": "KeyError"})
         except ValueError:
