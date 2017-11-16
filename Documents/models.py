@@ -1,16 +1,18 @@
 # -*- coding: utf8 -*-
-
 from django.db import models
 import os.path
-import os
+import os, time
 from django.db.models.signals import post_delete, pre_save, post_init, post_save
 from django.dispatch.dispatcher import receiver
+import datetime
+from django.contrib import messages
+from django.core.validators import ValidationError
 
 
 class Document(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name="Название")
     file = models.FileField(verbose_name="Документ")
-    extension = models.CharField(max_length=10)
+    extension = models.CharField(max_length=10, verbose_name="Расширение")
     dateOfModification = models.DateTimeField(verbose_name="Дата изменение")
     previous_state = None
 
@@ -22,13 +24,15 @@ class Document(models.Model):
     def post_save(sender, **kwargs):
         instance = kwargs.get('instance')
         created = kwargs.get('created')
+        instance.file.help_text = '<h3><font color="red">This is some text!</font></h3>'
+
         print("post_saveCreated = " + str(created))
         print("post_saveinstance = " + str(instance))
-
         if not created:
             if instance.previous_state != instance.file.path:
                 if os.path.isfile(instance.previous_state):
                     os.remove(instance.previous_state)
+
             else:
                 print("Not Change")
 
@@ -49,6 +53,7 @@ def my_signal_handcler(sender, instance, **kwargs):
     tmp = str(instance.file.name).split('.')
     instance.name = tmp[0]
     instance.extension = tmp[1]
+    instance.dateOfModification = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
 @receiver(post_delete, sender=Document)

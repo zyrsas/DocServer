@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="doc_online@localhost" uuid="86868c28-61dc-4665-8482-60bd895b98e9">
-      <database-info product="PostgreSQL" version="9.6.5" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>admin</user-name>
-      <introspection-schemas>doc_online:public</introspection-schemas>
-    </data-source>
-    <data-source name="doc_online@localhost [2]" uuid="8566434f-6796-486b-9250-cbe96cd98a1f">
+    <data-source name="doc_online2@localhost" uuid="8566434f-6796-486b-9250-cbe96cd98a1f">
       <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -18,16 +9,7 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:doc_online</introspection-schemas>
-    </data-source>
-    <data-source name="Django default" uuid="ccb79806-ded9-470b-b2c7-a83e9debdfdb">
-      <database-info product="MySQL" version="5.7.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
-      <user-name>root</user-name>
-      <introspection-schemas>*:doc_online</introspection-schemas>
+      <introspection-schemas>*:doc_online,doc_online2</introspection-schemas>
     </data-source>
   </component>
 </project>

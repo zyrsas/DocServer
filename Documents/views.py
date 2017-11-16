@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics
@@ -7,9 +7,13 @@ from django.core.files import File
 from Documents.models import Document, User, Department
 from Documents.serializers import DocumentSerializer, DepartmentSerializer
 from DocServer.settings import MEDIA_ROOT, MEDIA_URL
+from django.http import JsonResponse
+from django.forms.models import model_to_dict
 import json
 import binascii
 import datetime
+
+from rest_framework import serializers
 
 
 class DocumentList(generics.ListCreateAPIView):
@@ -66,14 +70,11 @@ def createFile(request):
 def SignUp(request):
     if request.method == "POST":
         try:
-            body = request.read().decode('utf-8')
-            json_data = json.loads(body)
-
-            if User.objects.filter(name=json_data['user']).count() == 0:
-                if Department.objects.filter(id=json_data['dep']).count() == 1:
-                    new_user = User(name=json_data['user'], password=json_data['pass'], departmen_id=json_data['dep'])
+            if User.objects.filter(name=request.GET.get('user')).count() == 0:
+                if Department.objects.filter(id=request.GET.get('dep')).count() == 1:
+                    new_user = User(name=request.GET.get('user'), password=request.GET.get('pass'), departmen_id=request.GET.get('dep'))
                     new_user.save()
-                    return Response({"SignUp": "Success"})
+                    return Response(model_to_dict(new_user))
                 else:
                     return Response({"SignUp": "Department not exist"})
             else:
@@ -90,17 +91,19 @@ def SignUp(request):
 def SignIn(request):
     if request.method == "POST":
         try:
-            body = request.read().decode('utf-8')
-            json_data = json.loads(body)
-
-            if User.objects.filter(name=json_data['user'],
-                                   password=json_data['pass']).count() == 0:
+            if User.objects.filter(name=request.GET.get('user'),
+                                   password=request.GET.get('pass')).count() == 0:
                 return Response({"SignIn": "Wrong"})
             else:
-                return Response({"SignIn": "Success"})
+
+                data_for_json = User.objects.filter(name=request.GET.get('user')).values('id',
+                                                                                               'name',
+                                                                                               'departmen_id',
+                                                                                               'departmen__name')
+                return JsonResponse(json.dumps(list(data_for_json), indent=2))
         except KeyError:
             return Response({"SignIn": "KeyError"})
         except ValueError:
             return Response({"SignIn": "ValueError"})
-        except :
+        except:
             return Response({"SignIn": "Error"})
