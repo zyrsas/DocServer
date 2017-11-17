@@ -7,9 +7,8 @@ from django.core.files import File
 from Documents.models import Document, User, Department
 from Documents.serializers import DocumentSerializer, DepartmentSerializer
 from DocServer.settings import MEDIA_ROOT, MEDIA_URL
-from django.http import JsonResponse
 from django.forms.models import model_to_dict
-import json
+from rest_framework import status
 import binascii
 import datetime
 
@@ -72,19 +71,27 @@ def SignUp(request):
         try:
             if User.objects.filter(name=request.GET.get('user')).count() == 0:
                 if Department.objects.filter(id=request.GET.get('dep')).count() == 1:
-                    new_user = User(name=request.GET.get('user'), password=request.GET.get('pass'), departmen_id=request.GET.get('dep'))
+                    new_user = User(name=request.GET.get('user'), password=request.GET.get('pass'), departmen_id=int(request.GET.get('dep')))
                     new_user.save()
-                    return Response(model_to_dict(new_user))
+
+                    data_for_json = User.objects.filter(name=request.GET.get('user')).values('id',
+                                                                                             'name',
+                                                                                             'departmen_id',
+                                                                                             'departmen__name')
+                    tmp = list(data_for_json)[0]
+
+                    return Response(tmp)
+
                 else:
                     return Response({"SignUp": "Department not exist"})
             else:
-                return Response({"SignUp": "Wrong! User exist"})
+                return Response({"Null": "Null"})
         except KeyError:
-            return Response({"SignUp": "KeyError"})
+            return Response({"Null": "Null"})
         except ValueError:
-            return Response({"SignUp": "ValueError"})
+            return Response({"Null": "Null"})
         except:
-            return Response({"SignUp": "Error"})
+            return Response({"Null": "Null"})
 
 
 @api_view(['POST', ])
@@ -93,7 +100,7 @@ def SignIn(request):
         try:
             if User.objects.filter(name=request.GET.get('user'),
                                    password=request.GET.get('pass')).count() == 0:
-                return Response({"SignIn": "Wrong"})
+                return Response({"Null": "Null"}, )
             else:
 
                 data_for_json = User.objects.filter(name=request.GET.get('user')).values('id',
@@ -101,7 +108,7 @@ def SignIn(request):
                                                                                                'departmen_id',
                                                                                                'departmen__name')
                 tmp = list(data_for_json)[0]
-            
+
                 return Response(tmp)
         except KeyError:
             return Response({"SignIn": "KeyError"})
@@ -109,3 +116,25 @@ def SignIn(request):
             return Response({"SignIn": "ValueError"})
         except:
             return Response({"SignIn": "Error"})
+
+
+@api_view(['POST', ])
+def GetDocFromDepartment(request):
+    if request.method == "POST":
+        try:
+            tmp = Department.objects.filter(id=int(request.GET.get('dep'))).values(
+                                                                            'documents__name',
+                                                                            'documents__extension',
+                                                                            'documents__id',
+                                                                            'documents__file',
+                                                                            'documents__dateOfModification'
+                                                                            )
+
+            return Response(list(tmp))
+        except KeyError:
+            return Response({"SignIn": "KeyError"})
+        except ValueError:
+            return Response({"SignIn": "ValueError"})
+        except:
+            return Response({"SignIn": "Error"})
+

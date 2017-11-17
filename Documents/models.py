@@ -5,7 +5,7 @@ import os, time
 from django.db.models.signals import post_delete, pre_save, post_init, post_save
 from django.dispatch.dispatcher import receiver
 import datetime
-from django.contrib import messages
+from django.http import HttpResponse
 from django.core.validators import ValidationError
 
 
@@ -15,6 +15,7 @@ class Document(models.Model):
     extension = models.CharField(max_length=10, verbose_name="Расширение")
     dateOfModification = models.DateTimeField(verbose_name="Дата изменение")
     previous_state = None
+
 
     def __str__(self):
         return str(self.name) + "." + str(self.extension)
@@ -48,12 +49,13 @@ class Document(models.Model):
 post_save.connect(Document.post_save, sender=Document)
 post_init.connect(Document.remember_state, sender=Document)
 
+
 @receiver(pre_save, sender=Document)
 def my_signal_handcler(sender, instance, **kwargs):
     tmp = str(instance.file.name).split('.')
     instance.name = tmp[0]
     instance.extension = tmp[1]
-    instance.dateOfModification = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    instance.dateOfModification = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 
 
 @receiver(post_delete, sender=Document)
@@ -69,6 +71,14 @@ class Department(models.Model):
     def __str__(self):
         return self.name
 
+    def documents_list(self):
+        a = "\n".join([a.name for a in self.documents.all()])
+        return a
+
+    @property
+    def first_document(self):
+        self.documents.all().first()
+
 
 class User(models.Model):
     name = models.CharField(max_length=100)
@@ -80,8 +90,8 @@ class User(models.Model):
 
 
 class UserToDoc(models.Model):
-    user = models.ForeignKey(User)
-    doc = models.ManyToManyField(Document)
+    user = models.IntegerField()
+    doc = models.IntegerField()
     status = models.BooleanField(default=False)
 
 
