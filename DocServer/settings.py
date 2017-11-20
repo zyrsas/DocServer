@@ -78,7 +78,10 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'DocServer.wsgi.application'
+
+
 
 
 # Database

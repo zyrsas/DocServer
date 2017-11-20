@@ -75,9 +75,25 @@ class Department(models.Model):
         a = "\n".join([a.name for a in self.documents.all()])
         return a
 
-    @property
-    def first_document(self):
-        self.documents.all().first()
+
+#post_save.connect(signal_department, sender=Department)
+#post_init.connect(Department.remember_state, sender=Department)
+
+
+@receiver(post_save, sender=Department)
+def signal_department(sender, instance, **kwargs):
+    print(instance.id)
+    userToDoc = Department.objects.filter(id=instance.id).values('documents__department__user',
+                                                                 'documents__id')
+    print(list(userToDoc))
+    for i in list(userToDoc):
+        i = dict(i)
+        print("doc_id = " + str(i['documents__id']))
+        print("user_id = " + str(i['documents__department__user']))
+        if ((i['documents__department__user'] != None) and (i['documents__id'] != None)):
+            if UserToDoc.objects.filter(user=i['documents__department__user'], doc=i['documents__id']).count() == 0:
+                user_to_doc = UserToDoc(user=i['documents__department__user'], doc=i['documents__id'])
+                user_to_doc.save()
 
 
 class User(models.Model):
@@ -89,10 +105,31 @@ class User(models.Model):
         return self.name
 
 
+""""@receiver(post_save, sender=User)
+def signal_user(sender, instance, **kwargs):
+    print(instance.id)
+    userToDoc = User.objects.filter(id=instance.id).values('departmen__documents__id')
+    print(list(userToDoc))
+    for i in list(userToDoc):
+        print("lost")
+        i = dict(i)
+        print("departmen__documents__id = " + str(i['departmen__documents__id']))
+        print("user_id = " + str(instance.id))
+        if ((i['departmen__documents__id'] != None) and (instance.id != None)):
+            if not UserToDoc.objects.filter(user=instance.id, doc=i['departmen__documents__id']).exists():
+                user_to_doc = UserToDoc(user=i['departmen__documents__id'], doc=instance.id, status=True)
+                user_to_doc.save()
+                print("Save")"""
+
+
 class UserToDoc(models.Model):
     user = models.IntegerField()
     doc = models.IntegerField()
     status = models.BooleanField(default=False)
+
+
+    def __str__(self):
+        return str(self.user) + " " + str(self.doc) + " " + str(self.status)
 
 
 
