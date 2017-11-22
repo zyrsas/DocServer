@@ -18,8 +18,8 @@ class TeachingUserModelAdmin(admin.ModelAdmin):
 
 class TeachingDepartmentModelAdmin(admin.ModelAdmin):
     list_display = ('name', "documents_list")
-    #list_filter = ('departmen', )
-    #search_fields = ['name', 'departmen__name']
+    list_filter = ('name', )
+    search_fields = ['name']
 
 
 admin.site.register(Document, TeachingDocumentModelAdmin)
