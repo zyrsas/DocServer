@@ -6,6 +6,7 @@ from Documents.models import Document, User, Department, UserToDoc
 from Documents.serializers import DocumentSerializer, DepartmentSerializer
 from DocServer.settings import MEDIA_ROOT, MEDIA_URL
 import os
+import json
 from hurry.filesize import size, alternative
 
 
@@ -146,6 +147,37 @@ def GetDocFromDepartment(request):
 
 
 @api_view(['POST', ])
+def CountStatusDocForUser(request):
+    count = 0
+    if request.method == "POST":
+        try:
+            user_id = request.GET.get('user_id')
+
+            dep_id = User.objects.filter(id=user_id).values('departmen_id')
+            dep_id = dict(list(dep_id)[0])
+            dep_id = dep_id['departmen_id']
+            print("Department = " + str(dep_id))
+
+            tmp = Department.objects.filter(id=dep_id).values(
+                                                              'documents__id',
+                                                              )
+            for i in tmp:
+                # add status for doc
+                userToDoc = UserToDoc.objects.filter(user=user_id, doc=i['documents__id'], status=False).count()
+                print(userToDoc)
+                if userToDoc > 0:
+                    count += 1
+
+            return Response({"Count": count})
+        except KeyError:
+            return Response({"Null": "Null"})
+        except ValueError:
+            return Response({"Null": "Null"})
+        except:
+            return Response({"Null": "Null"})
+
+
+@api_view(['POST', ])
 def StatusDocForUser(request):
     if request.method == "POST":
         try:
@@ -198,3 +230,29 @@ def StatusDocForUser(request):
             return Response({"Null": "Null"})
         except:
             return Response({"Null": "Null"})
+
+
+@api_view(['POST', ])
+def ChangeStatusDocForUser(request):
+    if request.method == "POST":
+        try:
+            user_id = request.GET.get('user_id')
+            print(user_id)
+            body_unicode = request.body.decode('utf-8')
+            list_doc = json.loads(body_unicode)
+
+            for i in list_doc:
+                userToDoc = UserToDoc.objects.filter(user=user_id, doc=i)
+                print(list(userToDoc))
+                for j in userToDoc:
+                    j.status = True
+                    j.save()
+                    print("Update")
+
+            return Response({"result": True})
+        except KeyError:
+            return Response({"result": False})
+        except ValueError:
+            return Response({"result": False})
+        except:
+            return Response({"result": False})

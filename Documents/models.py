@@ -2,15 +2,18 @@
 from django.db import models
 import os.path
 import os
-from django.db.models.signals import post_delete, pre_save, post_init, post_save
+from django.db.models.signals import post_delete, pre_save, post_init, post_save, pre_delete
 from django.dispatch.dispatcher import receiver
 import datetime
 from django.dispatch import Signal
-
+from django.utils.safestring import mark_safe
+from django.utils import timezone
 
 save_dep = Signal(providing_args=["id_dep"])
 global_dep = -1
 
+
+#BEGIN Documents =====================
 
 class Document(models.Model):
     name = models.CharField(max_length=100, verbose_name="Название")
@@ -21,6 +24,7 @@ class Document(models.Model):
 
     class Meta:
         verbose_name_plural = "Документы"
+        verbose_name = "Документ"
 
     def __str__(self):
         return str(self.name) + "." + str(self.extension)
@@ -36,6 +40,16 @@ class Document(models.Model):
             if instance.previous_state != instance.file.path:
                 if os.path.isfile(instance.previous_state):
                     os.remove(instance.previous_state)
+                    print("Change!!!")
+
+                    # change status false
+                    userToDoc = UserToDoc.objects.filter(doc=instance.id)
+                    print(list(userToDoc))
+                    for i in userToDoc:
+                        i.status = False
+                        i.save()
+                        print("Update")
+
 
             else:
                 print("Not Change")
@@ -54,9 +68,9 @@ class Document(models.Model):
 def my_signal_handcler(sender, instance, **kwargs):
     tmp = str(instance.file.name).split('.')
     instance.name = tmp[0]
-    instance.extension = tmp[1]
-    instance.dateOfModification = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-
+    instance.extension = tmp[-1]
+    # instance.dateOfModification = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+    instance.dateOfModification = timezone.now()
 
 # delete after delete row in table
 @receiver(post_delete, sender=Document)
@@ -65,27 +79,53 @@ def document_delete(sender, instance, **kwargs):
         os.remove(instance.file.path)
 
 
+@receiver(pre_delete, sender=Document)
+def document_delete(sender, instance, **kwargs):
+    userToDoc = Document.objects.filter(id=instance.id).values('id')
+    print(list(userToDoc))
+    for i in list(userToDoc):
+        i = dict(i)
+        print("doc_id = " + str(i['id']))
+        if i['id'] != None:
+            if UserToDoc.objects.filter(doc=i['id']).count() != 0:
+                UserToDoc.objects.filter(doc=i['id']).delete()
+                print("Delete!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+
 # for signals save for Doc
 post_save.connect(Document.post_save, sender=Document)
 post_init.connect(Document.remember_state, sender=Document)
 
+# END Documents ========================
+
+# BEGIN Department!!! =================================
 
 class Department(models.Model):
     name = models.CharField(max_length=100, verbose_name="Название")
     documents = models.ManyToManyField(Document, verbose_name="Документы")
 
     class Meta:
-        verbose_name_plural = "Департаменты"
+        verbose_name_plural = "Отделы"
+        verbose_name = "Отдел"
 
     def __str__(self):
         return self.name
 
     def documents_list(self):
-        a = "<br>".join([a.name + "." + a.extension for a in self.documents.all()])
-        return '<font size="2" color="#2E768F">' + a + "</p>"
+        to_return = '<ul>'
+        i = 0
+        max = int(self.documents.count()) - 10
+        for doc in self.documents.all():
+            to_return += '<li><font size="2" color="#2E768F">{}</li>'.format(doc.name + "." + doc.extension)
+            i += 1
+            if i == 10:
+                to_return += '<li><font size="2" color="#2E768F">...+' + str(max) + '</li></ul>'
+                return mark_safe(to_return)
+        to_return += '</ul>'
+        return mark_safe(to_return)
 
     documents_list.allow_tags = True
-
+    documents_list.short_description = "Документы"
 
 
 @receiver(post_save, sender=Department)
@@ -103,6 +143,24 @@ def check_update(sender, instance, **kwargs):
         global_dep = -1
 
 
+@receiver(pre_delete, sender=Department)
+def delte_dep(sender, instance, **kwargs):
+    userToDoc = Department.objects.filter(id=instance.id).values('documents__department__user',
+                                                                 'documents__id')
+    print(list(userToDoc))
+    for i in list(userToDoc):
+        i = dict(i)
+        print("doc_id = " + str(i['documents__id']))
+        print("user_id = " + str(i['documents__department__user']))
+        if ((i['documents__department__user'] != None) and (i['documents__id'] != None)):
+            if UserToDoc.objects.filter(user=i['documents__department__user'], doc=i['documents__id']).count() == 0:
+                UserToDoc.objects.filter(user=i['documents__department__user'], doc=i['documents__id']).delete()
+                print("Delete!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+
+# END Department!!! =================================
+
+# BEGIN User!!! =================================
 class User(models.Model):
     name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
@@ -110,10 +168,27 @@ class User(models.Model):
 
     class Meta:
         verbose_name_plural = "Пользователи"
+        verbose_name = "Пользователя"
 
     def __str__(self):
         return self.name
 
+
+@receiver(pre_delete, sender=User)
+def document_delete(sender, instance, **kwargs):
+    userToDoc = User.objects.filter(id=instance.id).values('id')
+    print(list(userToDoc))
+    for i in list(userToDoc):
+        i = dict(i)
+        print("user_id = " + str(i['id']))
+        if i['id'] != None:
+            if UserToDoc.objects.filter(user=i['id']).count() != 0:
+                UserToDoc.objects.filter(user=i['id']).delete()
+                print("Delete!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+# END User!!! =================================
+
+# BEGIN UserToDoc =======================
 
 class UserToDoc(models.Model):
     user = models.IntegerField()
@@ -140,3 +215,6 @@ def dep_save(sender, id_dep, **kwargs):
 
 
 save_dep.connect(dep_save)
+
+
+# END UserToDoc ===============================

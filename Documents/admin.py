@@ -29,3 +29,4 @@ admin.site.register(UserToDoc)
 
 # Admin change logo text
 admin.site.site_header = "Directory NNR"
+admin.site.site_title = "Directory NNR"
