@@ -8,6 +8,8 @@ from DocServer.settings import MEDIA_ROOT, MEDIA_URL
 import os
 import json
 from hurry.filesize import size, alternative
+from Documents.licence import text_licence
+from django.http import HttpResponse
 
 
 class DocumentList(generics.ListCreateAPIView):
@@ -256,3 +258,8 @@ def ChangeStatusDocForUser(request):
             return Response({"result": False})
         except:
             return Response({"result": False})
+
+
+def ShowLicence(reqest):
+    return HttpResponse(text_licence)
+

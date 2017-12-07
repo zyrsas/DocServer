@@ -25,6 +25,7 @@ class Document(models.Model):
     class Meta:
         verbose_name_plural = "Документы"
         verbose_name = "Документ"
+        ordering = ['-dateOfModification']
 
     def __str__(self):
         return str(self.name) + "." + str(self.extension)
@@ -107,6 +108,7 @@ class Department(models.Model):
     class Meta:
         verbose_name_plural = "Отделы"
         verbose_name = "Отдел"
+
 
     def __str__(self):
         return self.name
@@ -202,6 +204,15 @@ class UserToDoc(models.Model):
 def dep_save(sender, id_dep, **kwargs):
     userToDoc = Department.objects.filter(id=id_dep).values('documents__department__user',
                                                             'documents__id')
+
+    print(id_dep)
+    doc_id = Department.objects.filter(id=id_dep).values('documents__file')
+    for i in list(doc_id):
+        print(i['documents__file'])
+        if Document.objects.filter(file=i['documents__file']).count() == 0:
+            doc = Document(file=i['documents__file'])
+            doc.save()
+
     print(list(userToDoc))
     for i in list(userToDoc):
         i = dict(i)

@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^count_doc/$', views.CountStatusDocForUser),
     url(r'^mark_doc/$', views.ChangeStatusDocForUser),
     url(r'^all_department/$', views.DepartmentList.as_view()),
+    url(r'^licence/$', views.ShowLicence),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
