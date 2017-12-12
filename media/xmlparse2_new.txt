@@ -1,0 +1,86 @@
+	      ___________________________________________
+
+	       INSTRUCTIONS FOR PARSING PATENT XML FILES
+	      ___________________________________________
+
+
+Table of Contents
+_________________
+
+1 Goal
+2 Data
+3 Fields we want to keep
+4 Output format: tab delimited
+5 The command
+6 Process
+7 Applying
+
+
+
+
+
+1 Goal
+======
+
+  Need to parse patent text files to extract patent number, and two
+  specific sections.
+
+
+2 Data
+======
+
+  - Focus on Patent Grant Full Text Data (No Images) (JAN 1976 -
+    PRESENT) from this page: [https://bulkdata.uspto.gov/]
+
+  - Need to parse all patetns from the subset from 2002 to 2016, so:
+    - [https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/2002]
+    - [https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/2003]
+    - ...
+    - [https://bulkdata.uspto.gov/data/patent/grant/redbook/fulltext/2016/]
+
+
+  There may be slight differences across the years in document
+  structure, but basics are similar. Here is the 4.2 DTD.
+  [https://www.uspto.gov/sites/default/files/products/PatentGrantXMLv42-Documentation.pdf]
+
+  Please test for a few inputfiles from each type of DTD ... I don't
+  believe this is well structured XML however.
+
+
+3 Fields we want to keep
+========================
+
+  Each file contains all patents for a week. Each patent is denoted by a
+  <document-id> following <publication-reference>.
+
+  - The patent number <!element publication-reference (document-id)>
+  - All paragraphs from DETDES
+  - All paragraphs from BRFSUM
+
+
+4 Output format: tab delimited
+==============================
+
+  COL 1: document-id COL 2: Section (either DETDESC or BRFSUM) COL 3:
+  Paragraph number COL 4: The text of DETDESC or BRFSUM paragraph
+
+
+5 The command
+=============
+
+  Ideally something like python xmlpatparse.py [inputXMLfile] -o
+  [outputCSVfile]
+
+
+6 Process
+=========
+
+  Try on first and last file from every other year; let me review then
+  iterate with tweaks.
+
+
+7 Applying
+==========
+
+  Would be helpful (but not essential) if you could send an excerpt from
+  one output file or part of one with your application.

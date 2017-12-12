@@ -4,7 +4,7 @@ from Documents.models import Document, User, Department, UserToDoc
 
 class TeachingDocumentModelAdmin(admin.ModelAdmin):
     exclude = ('name', 'extension',)
-    list_display = ('name', 'extension', 'dateOfModification')
+    list_display = ('name', 'extension', 'dateOfModification', )
     list_filter = ('dateOfModification', 'extension')
     search_fields = ['name', 'extension', ]
     readonly_fields = ['dateOfModification', ]
@@ -33,3 +33,4 @@ admin.site.register(Department, TeachingDepartmentModelAdmin)
 # Admin change logo text
 admin.site.site_header = "Directory NNR"
 admin.site.site_title = "Directory NNR"
+

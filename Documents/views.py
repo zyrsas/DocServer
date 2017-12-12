@@ -263,3 +263,17 @@ def ChangeStatusDocForUser(request):
 def ShowLicence(reqest):
     return HttpResponse(text_licence)
 
+
+from Documents.form import UploadForm
+from django.views.generic.edit import FormView
+
+class UploadView(FormView):
+    template_name = 'form.html'
+    form_class = UploadForm
+    success_url = '/admin/Documents/document/'
+
+    def form_valid(self, form):
+        for each in form.cleaned_data['attachments']:
+            Document.objects.create(file=each)
+        return super(UploadView, self).form_valid(form)
+

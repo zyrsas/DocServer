@@ -220,7 +220,7 @@ def dep_save(sender, id_dep, **kwargs):
         print("user_id = " + str(i['documents__department__user']))
         if ((i['documents__department__user'] != None) and (i['documents__id'] != None)):
             if UserToDoc.objects.filter(user=i['documents__department__user'], doc=i['documents__id']).count() == 0:
-                user_to_doc = UserToDoc(user=i['documents__department__user'], doc=i['documents__id'])
+                user_to_doc = UserToDoc(user=i['documents__department__user'], doc=i['documents__id'], status=False)
                 user_to_doc.save()
                 print("SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
