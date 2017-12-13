@@ -1,5 +1,49 @@
-<form action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Send" />
-</form>
+{% extends "admin/index.html" %}
+{% load i18n static %}
+
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+
+{% block title %}Добавить документы{% endblock %}
+{% block branding %}
+    <h1 id="site-name">
+        <a id="site-name" href="/admin/">{% trans 'Directory NNR' %}</a>
+    </h1>
+
+{% endblock %}
+
+
+{% block content %}
+    {% load admin_list %}
+<div id="content-main">
+ <p style="          margin: 0;
+
+                            padding: 8px;
+                            font-weight: 400;
+                            font-size: 13px;
+                            text-align: left;
+                            background: #79aec8;
+                            color: #fff;">Добавление документов</p>
+    <div style="position: absolute; top: 5%; left: 10%; margin-top: 50px; margin-left: -100px;  /* Параметры границы */
+
+    padding: 10px; width: 500px; height: 500px">
+
+        <br>
+        <br>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="fieldWrapper">
+                <br>
+                <input type="submit" value="Загрузить"/>
+            </div>
+        </form>
+
+    </div>
+    </div>
+{% endblock %}
+
+
+
+
