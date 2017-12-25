@@ -76,11 +76,16 @@ def SignIn(request):
                                    password=request.GET.get('pass')).count() == 0:
                 return Response({"Null": "Null"}, )
             else:
-
+                if request.GET.get('regID') != None:
+                    reg_ID = User.objects.filter(name=request.GET.get('user'), password=request.GET.get('pass'))
+                    print(list(reg_ID))
+                    for i in reg_ID:
+                        i.regID = request.GET.get('regID')
+                        i.save()
+                        print("Update")
                 data_for_json = User.objects.filter(name=request.GET.get('user')).values('id',
                                                                                          'name',
-                                                                                         'departmen_id',
-                                                                                         'departmen__name'
+                                                                                         'departmen_id',                                                                       'departmen__name'
                                                                                          )
                 tmp = list(data_for_json)[0]
 
@@ -276,4 +281,5 @@ class UploadView(FormView):
         for each in form.cleaned_data['Documents']:
             Document.objects.create(file=each)
         return super(UploadView, self).form_valid(form)
+
 

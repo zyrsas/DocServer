@@ -9,6 +9,8 @@ from django.dispatch import Signal
 from django.utils.safestring import mark_safe
 from django.utils import timezone
 
+
+
 save_dep = Signal(providing_args=["id_dep"])
 global_dep = -1
 
@@ -147,16 +149,16 @@ def check_update(sender, instance, **kwargs):
 
 @receiver(pre_delete, sender=Department)
 def delte_dep(sender, instance, **kwargs):
-    userToDoc = Department.objects.filter(id=instance.id).values('documents__department__user',
+    userToDoc = Department.objects.filter(id=instance.id).values('user',
                                                                  'documents__id')
     print(list(userToDoc))
     for i in list(userToDoc):
         i = dict(i)
         print("doc_id = " + str(i['documents__id']))
-        print("user_id = " + str(i['documents__department__user']))
-        if ((i['documents__department__user'] != None) and (i['documents__id'] != None)):
-            if UserToDoc.objects.filter(user=i['documents__department__user'], doc=i['documents__id']).count() == 0:
-                UserToDoc.objects.filter(user=i['documents__department__user'], doc=i['documents__id']).delete()
+        print("user_id = " + str(i['user']))
+        if ((i['user'] != None) and (i['documents__id'] != None)):
+            if UserToDoc.objects.filter(user=i['user'], doc=i['documents__id']).count() == 0:
+                UserToDoc.objects.filter(user=i['user'], doc=i['documents__id']).delete()
                 print("Delete!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
@@ -167,6 +169,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     departmen = models.ForeignKey(Department)
+    regID = models.CharField(max_length=300, default="")
 
     class Meta:
         verbose_name_plural = "Пользователи"
@@ -174,6 +177,22 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
+
+@receiver(post_save, sender=User)
+def create_profile(sender, instance, created, **kwargs):
+    if created:
+        print("USER CREATE!!!!!!!!!!!!!!")
+        print(instance.id)
+        user_id = instance.id
+        # add to database doc for user
+        userToDoc = User.objects.filter(id=user_id).values('departmen__documents__id')
+        print(list(userToDoc))
+        for i in list(userToDoc):
+            i = dict(i)
+            if ((i['departmen__documents__id'] != None) and (user_id != None)):
+                if not UserToDoc.objects.filter(user=user_id, doc=i['departmen__documents__id']).exists():
+                    user_to_doc = UserToDoc(user=user_id, doc=i['departmen__documents__id'], status=True)
+                    user_to_doc.save()
 
 
 @receiver(pre_delete, sender=User)
@@ -202,8 +221,10 @@ class UserToDoc(models.Model):
 
 
 def dep_save(sender, id_dep, **kwargs):
-    userToDoc = Department.objects.filter(id=id_dep).values('documents__department__user',
-                                                            'documents__id')
+    userToDoc = Department.objects.filter(id=id_dep).values(
+                                                            'documents__id',
+                                                            'user',
+                                                            )
 
     print(id_dep)
     doc_id = Department.objects.filter(id=id_dep).values('documents__file')
@@ -213,19 +234,24 @@ def dep_save(sender, id_dep, **kwargs):
             doc = Document(file=i['documents__file'])
             doc.save()
 
+    user_list = []
     print(list(userToDoc))
     for i in list(userToDoc):
         i = dict(i)
         print("doc_id = " + str(i['documents__id']))
-        print("user_id = " + str(i['documents__department__user']))
-        if ((i['documents__department__user'] != None) and (i['documents__id'] != None)):
-            if UserToDoc.objects.filter(user=i['documents__department__user'], doc=i['documents__id']).count() == 0:
-                user_to_doc = UserToDoc(user=i['documents__department__user'], doc=i['documents__id'], status=False)
+        print("user_id = " + str(i['user']))
+        if ((i['user'] != None) and (i['documents__id'] != None)):
+            if UserToDoc.objects.filter(user=i['user'], doc=i['documents__id']).count() == 0:
+                user_to_doc = UserToDoc(user=i['user'], doc=i['documents__id'], status=False)
                 user_to_doc.save()
+                user_list.append(i['user'])
                 print("SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+    if user_list:
+        from Documents.notifications import sendNotification
+        sendNotification(user_id=user_list)
 
 
 save_dep.connect(dep_save)
-
 
 # END UserToDoc ===============================

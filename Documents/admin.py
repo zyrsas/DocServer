@@ -14,9 +14,7 @@ class TeachingUserModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'departmen')
     list_filter = ('departmen', )
     search_fields = ['name', 'departmen__name']
-
-    def has_add_permission(self, request):
-        return False
+    readonly_fields = ['regID', ]
 
 
 class TeachingDepartmentModelAdmin(admin.ModelAdmin):
@@ -28,7 +26,7 @@ class TeachingDepartmentModelAdmin(admin.ModelAdmin):
 admin.site.register(Document, TeachingDocumentModelAdmin)
 admin.site.register(User, TeachingUserModelAdmin)
 admin.site.register(Department, TeachingDepartmentModelAdmin)
-#admin.site.register(UserToDoc)
+admin.site.register(UserToDoc)
 
 # Admin change logo text
 admin.site.site_header = "Directory NNR"
