@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'db_file_storage',
 ]
 
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
@@ -135,13 +136,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR) + "/static/"
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 1100
+

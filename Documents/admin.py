@@ -21,12 +21,19 @@ class TeachingDepartmentModelAdmin(admin.ModelAdmin):
     list_display = ('name', "documents_list")
     list_filter = ('name', )
     search_fields = ['name']
+    filter_horizontal = ('documents',)
+
+    class Media:
+        css = {"all": ("/media/styles.css", )}
+
+
 
 
 admin.site.register(Document, TeachingDocumentModelAdmin)
 admin.site.register(User, TeachingUserModelAdmin)
 admin.site.register(Department, TeachingDepartmentModelAdmin)
 admin.site.register(UserToDoc)
+
 
 # Admin change logo text
 admin.site.site_header = "Directory NNR"

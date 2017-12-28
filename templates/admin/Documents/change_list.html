@@ -3,7 +3,12 @@
 
 {% block object-tools-items %}
     {{ block.super }}
-    <li>
-        <a href="/admin_add" class="btn btn-high btn-success">ДОБАВИТЬ ДОКУМЕНТЫ</a>
-    </li>
+    {% if  'admin/Documents/document/' in request.get_full_path %}
+        <li>
+            <a href="/admin_add" class="btn btn-high btn-success">ДОБАВИТЬ ДОКУМЕНТЫ</a>
+        </li>
+    {% endif %}
+
 {% endblock %}
+
+

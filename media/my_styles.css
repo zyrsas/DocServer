@@ -1,0 +1,7 @@
+.selector select {
+    height: 200px;
+}
+
+.filtered select{
+    width: 1500px;
+}

@@ -4,7 +4,6 @@ import os.path
 import os
 from django.db.models.signals import post_delete, pre_save, post_init, post_save, pre_delete
 from django.dispatch.dispatcher import receiver
-import datetime
 from django.dispatch import Signal
 from django.utils.safestring import mark_safe
 from django.utils import timezone
@@ -30,6 +29,10 @@ class Document(models.Model):
         ordering = ['-dateOfModification']
 
     def __str__(self):
+        date_to_str = str(self.dateOfModification)
+        date_to_str = date_to_str.replace('T', " ").replace("+00:00", "")
+        last_ind = date_to_str.rfind(':')
+        date_to_str = date_to_str[:last_ind]
         return str(self.name) + "." + str(self.extension)
 
     @staticmethod
@@ -166,9 +169,9 @@ def delte_dep(sender, instance, **kwargs):
 
 # BEGIN User!!! =================================
 class User(models.Model):
-    name = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
-    departmen = models.ForeignKey(Department)
+    name = models.CharField(max_length=100, verbose_name="Имя")
+    password = models.CharField(max_length=100, verbose_name="Пароль")
+    departmen = models.ForeignKey(Department, verbose_name="Отдел")
     regID = models.CharField(max_length=300, default="")
 
     class Meta:
@@ -226,10 +229,8 @@ def dep_save(sender, id_dep, **kwargs):
                                                             'user',
                                                             )
 
-    print(id_dep)
     doc_id = Department.objects.filter(id=id_dep).values('documents__file')
     for i in list(doc_id):
-        print(i['documents__file'])
         if Document.objects.filter(file=i['documents__file']).count() == 0:
             doc = Document(file=i['documents__file'])
             doc.save()

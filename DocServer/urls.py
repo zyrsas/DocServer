@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from Documents import views
 from DocServer.settings import MEDIA_URL, MEDIA_ROOT
-from django.conf.urls import include
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -17,5 +17,5 @@ urlpatterns = [
     url(r'^all_department/$', views.DepartmentList.as_view()),
     url(r'^licence/$', views.ShowLicence),
     url(r'^admin_add/$', views.UploadView.as_view()),
-    # url(r'^send_Not/$', views.sendNotification),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
+
