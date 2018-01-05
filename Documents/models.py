@@ -173,6 +173,7 @@ class User(models.Model):
     password = models.CharField(max_length=100, verbose_name="Пароль")
     departmen = models.ForeignKey(Department, verbose_name="Отдел")
     regID = models.CharField(max_length=300, default="")
+    access = models.BooleanField(default=False, verbose_name="Разрешить доступ")
 
     class Meta:
         verbose_name_plural = "Пользователи"

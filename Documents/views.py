@@ -34,7 +34,8 @@ def SignUp(request):
                     data_for_json = User.objects.filter(name=request.GET.get('user')).values('id',
                                                                                              'name',
                                                                                              'departmen_id',
-                                                                                             'departmen__name')
+                                                                                             'departmen__name',
+                                                                                             'access')
                     tmp = list(data_for_json)[0]
 
                     # id new user
@@ -85,7 +86,9 @@ def SignIn(request):
                         print("Update")
                 data_for_json = User.objects.filter(name=request.GET.get('user')).values('id',
                                                                                          'name',
-                                                                                         'departmen_id',                                                                       'departmen__name'
+                                                                                         'departmen_id',
+                                                                                         'departmen__name',
+                                                                                         'access'
                                                                                          )
                 tmp = list(data_for_json)[0]
 
@@ -245,16 +248,13 @@ def ChangeStatusDocForUser(request):
         try:
             user_id = request.GET.get('user_id')
             print(user_id)
-            body_unicode = request.body.decode('utf-8')
-            list_doc = json.loads(body_unicode)
 
-            for i in list_doc:
-                userToDoc = UserToDoc.objects.filter(user=user_id, doc=i)
-                print(list(userToDoc))
-                for j in userToDoc:
-                    j.status = True
-                    j.save()
-                    print("Update")
+            userToDoc = UserToDoc.objects.filter(user=user_id, status=False)
+            print(list(userToDoc))
+            for j in userToDoc:
+                j.status = True
+                j.save()
+                print("Update")
 
             return Response({"result": True})
         except KeyError:
