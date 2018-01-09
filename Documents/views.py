@@ -28,7 +28,11 @@ def SignUp(request):
         try:
             if User.objects.filter(name=request.GET.get('user')).count() == 0:
                 if Department.objects.filter(id=request.GET.get('dep')).count() == 1:
-                    new_user = User(name=request.GET.get('user'), password=request.GET.get('pass'), departmen_id=int(request.GET.get('dep')))
+                    if request.GET.get('regID') != None:
+                        reg_ID = request.GET.get('regID')
+                    else:
+                        reg_ID = ""
+                    new_user = User(name=request.GET.get('user'), password=request.GET.get('pass'), departmen_id=int(request.GET.get('dep')), regID=reg_ID)
                     new_user.save()
 
                     data_for_json = User.objects.filter(name=request.GET.get('user')).values('id',
