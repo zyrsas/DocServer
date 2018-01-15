@@ -4,6 +4,7 @@ API_KEY = "AAAAhMVvqN0:APA91bGmK5ie-OpBUEihpGVMHqqJ3j5dwqfJ8ZEEAy8s5UkK9Vb7Y8r3n
 
 def sendNotification(user_id):
     user_id = list(set(user_id))
+    user_id = clearUserList(user_id)
 
     from pyfcm import FCMNotification
     for i in user_id:
@@ -15,7 +16,17 @@ def sendNotification(user_id):
         message_title = "DirectoryNNR"
         message_body = "Новых документов: " + str(countDocForUserID(i))
         result = push_service.notify_single_device(registration_id=registration_id, message_title=message_title,
-                                                   message_body=message_body)
+                                                   message_body=message_body, badge=countDocForUserID(i))
+
+
+def clearUserList(user_id):
+    new_list = []
+    for i in user_id:
+        user = User.objects.filter(id=i)
+        for j in user:
+            if j.access == True:
+                new_list.append(i)
+    return new_list
 
 
 def countDocForUserID(id):

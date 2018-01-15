@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^mark_doc/$', views.ChangeStatusDocForUser),
     url(r'^all_department/$', views.DepartmentList.as_view()),
     url(r'^licence/$', views.ShowLicence),
+    url(r'^refresh_token/$', views.RefreshTOKEN),
+    url(r'^clear_token/$', views.ClearTOKEN),
     url(r'^admin_add/$', views.UploadView.as_view()),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
 

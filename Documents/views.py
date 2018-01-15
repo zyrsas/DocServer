@@ -269,6 +269,54 @@ def ChangeStatusDocForUser(request):
             return Response({"result": False})
 
 
+@api_view(['POST', ])
+def RefreshTOKEN(request):
+    if request.method == "POST":
+        try:
+            user_id = request.GET.get('user_id')
+            regID = request.GET.get('regID')
+            print(user_id)
+
+
+            users = User.objects.filter(id=user_id)
+            print(list(users))
+            for j in users:
+                j.regID = regID
+                j.save()
+                print("Update")
+
+            return Response({"result": True})
+        except KeyError:
+            return Response({"result": False})
+        except ValueError:
+            return Response({"result": False})
+        except:
+            return Response({"result": False})
+
+
+@api_view(['POST', ])
+def ClearTOKEN(request):
+    if request.method == "POST":
+        try:
+            user_id = request.GET.get('user_id')
+
+            users = User.objects.filter(id=user_id)
+            print(list(users))
+            for j in users:
+                j.regID = ""
+                j.save()
+                print("Update")
+
+            return Response({"result": True})
+        except KeyError:
+            return Response({"result": False})
+        except ValueError:
+            return Response({"result": False})
+        except:
+            return Response({"result": False})
+
+
+
 def ShowLicence(reqest):
     return HttpResponse(text_licence)
 

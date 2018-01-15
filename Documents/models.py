@@ -50,11 +50,15 @@ class Document(models.Model):
 
                     # change status false
                     userToDoc = UserToDoc.objects.filter(doc=instance.id)
-                    print(list(userToDoc))
+                    user_list = []
                     for i in userToDoc:
                         i.status = False
+                        user_list.append(i.user)
                         i.save()
                         print("Update")
+                    if user_list:
+                        from Documents.notifications import sendNotification
+                        sendNotification(user_id=user_list)
 
 
             else:
