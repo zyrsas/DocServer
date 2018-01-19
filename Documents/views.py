@@ -10,6 +10,7 @@ import json
 from hurry.filesize import size, alternative
 from Documents.licence import text_licence
 from django.http import HttpResponse
+from django.template.response import TemplateResponse
 
 
 class DocumentList(generics.ListCreateAPIView):
@@ -335,3 +336,19 @@ class UploadView(FormView):
         return super(UploadView, self).form_valid(form)
 
 
+@api_view(['POST', ])
+def DeleteUserForTESTING(request):
+    if request.method == "POST":
+        try:
+            User.objects.filter(id=request.GET.get('user_id')).delete()
+            return Response({"result": True})
+        except KeyError:
+            return Response({"Null": "Null"})
+        except ValueError:
+            return Response({"Null": "Null"})
+        except:
+            return Response({"Null": "Null"})
+
+
+def contac(request):
+    return TemplateResponse(request, 'contact.html')

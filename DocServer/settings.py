@@ -34,6 +34,7 @@ DEFAULT_FILE_STORAGE = 'database_files.storage.DatabaseStorage'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'Documents.apps.DocumentsConfig',
     'rest_framework',
     'db_file_storage',
+    'bootstrap4',
 ]
 
 

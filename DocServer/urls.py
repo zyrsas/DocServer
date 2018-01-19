@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import *
 from django.conf.urls.static import static
 from django.contrib import admin
 from Documents import views
@@ -18,6 +18,8 @@ urlpatterns = [
     url(r'^licence/$', views.ShowLicence),
     url(r'^refresh_token/$', views.RefreshTOKEN),
     url(r'^clear_token/$', views.ClearTOKEN),
+    url(r'^user_test/$', views.DeleteUserForTESTING),
     url(r'^admin_add/$', views.UploadView.as_view()),
+    url(r'^contact/', views.contac),
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
 

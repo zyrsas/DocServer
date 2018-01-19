@@ -9,3 +9,4 @@ mysqlclient==1.3.12
 hurry.filesize
 django-multiupload
 pyfcm
+cmsplugin-feedback
