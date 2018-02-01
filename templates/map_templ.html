@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+// This example uses SVG path notation to add a vector-based symbol
+      // as the icon for a marker. The resulting icon is a star-shaped symbol
+      // with a pale yellow fill and a thick yellow border.
+        var marker = [];
+        var count = 1;
+      function initMap() {
+          var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 5,
+              center: {lat: -25.363882, lng: 131.044922}
+          });
+
+          //initMap()
+          var goldStar = {
+              path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+              fillColor: 'yellow',
+              fillOpacity: 0.8,
+              scale: 1,
+              strokeColor: 'gold',
+              strokeWeight: 14
+          };
+
+
+        function start() {
+
+            setMapOnAll(null);
+            marker = [];
+
+            for (i = 0; i < 20; i++) {
+                marker[i] = new google.maps.Marker({
+                    position: {lat: -18.363882 + count, lng: 100.044922 + count},
+                   // icon: "https://cdn4.iconfinder.com/data/icons/spirit20/marker.png",
+                    map: map,
+                     icon: {
+        labelOrigin: new google.maps.Point(14,40),
+        url: "https://lh3.googleusercontent.com/o8p34cULqHPYFb8JAHGahFuXJP6ql4aGr3nuVqlAnE_2ZPi1zlbwTsnnDL-6tvG2sHkLS3MtTu9O3suPC7KX=w1301-h604"
+      },
+      snipet: "asdasdasdasdas\nfasfasfasfasf",
+      label: {
+        text: 'Sasha Zyrik 17:11 12.01',
+        color: "black",
+        fontWeight: "bold",
+        fontSize: "10px"
+      },
+                });
+                count = count + 1;
+                console.log('Var = ' + i);
+            }
+            setTimeout(start, 20000);
+        }
+        // boot up the first call
+        start();
+
+
+        function setMapOnAll(map) {
+            for (var i = 0; i < marker.length; i++) {
+                marker[i].setMap(map);
+            }
+         }
+
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBabF55JYfzyqCJ6__Pi33EtW84ldRDN8g&callback=initMap"
+    async defer></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

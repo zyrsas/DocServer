@@ -11,6 +11,7 @@ from hurry.filesize import size, alternative
 from Documents.licence import text_licence
 from django.http import HttpResponse
 from django.template.response import TemplateResponse
+from django.shortcuts import render_to_response
 
 
 class DocumentList(generics.ListCreateAPIView):
@@ -350,5 +351,34 @@ def DeleteUserForTESTING(request):
             return Response({"Null": "Null"})
 
 
+@api_view(['POST', ])
+def UpdateCoordinates(request):
+    if request.method == "POST":
+        try:
+            user_id = request.GET.get('user_id')
+
+            users = User.objects.filter(id=user_id)
+            print(list(users))
+            for user in users:
+                user.longitude = request.GET.get('longitude')
+                user.latitude = request.GET.get('latitude')
+                user.date = request.GET.get('date')
+                user.save()
+                print("Update")
+
+            return Response({"result": True})
+        except KeyError:
+            return Response({"result": False})
+        except ValueError:
+            return Response({"result": False})
+        except:
+            return Response({"result": False})
+
+
 def contac(request):
     return TemplateResponse(request, 'contact.html')
+
+
+def map(request):
+    print("The sparta JAVASCRIPT!!!!")
+    return render_to_response('map_templ.html')

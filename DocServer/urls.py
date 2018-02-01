@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^user_test/$', views.DeleteUserForTESTING),
     url(r'^admin_add/$', views.UploadView.as_view()),
     url(r'^contact/', views.contac),
+    url(r'^map/$', views.map),
+    url(r'^coordinate/$', views.UpdateCoordinates)
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
 

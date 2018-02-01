@@ -14,7 +14,7 @@ class TeachingUserModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'departmen', 'access')
     list_filter = ('departmen', )
     search_fields = ['name', 'departmen__name']
-    readonly_fields = ['regID', ]
+    readonly_fields = ['regID', 'latitude', 'longitude', 'date']
 
 
 class TeachingDepartmentModelAdmin(admin.ModelAdmin):
@@ -25,8 +25,6 @@ class TeachingDepartmentModelAdmin(admin.ModelAdmin):
 
     class Media:
         css = {"all": ("/media/styles.css", )}
-
-
 
 
 admin.site.register(Document, TeachingDocumentModelAdmin)

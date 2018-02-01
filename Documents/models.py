@@ -178,6 +178,9 @@ class User(models.Model):
     departmen = models.ForeignKey(Department, verbose_name="Отдел")
     regID = models.CharField(max_length=300, default="")
     access = models.BooleanField(default=False, verbose_name="Разрешить доступ")
+    latitude = models.CharField(max_length=50, blank=True)
+    longitude = models.CharField(max_length=50, blank=True)
+    date = models.CharField(max_length=50, blank=True)
 
     class Meta:
         verbose_name_plural = "Пользователи"

@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'db_file_storage',
     'bootstrap4',
+    'easy_maps',
 ]
 
+SITE_ID = 1
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -145,8 +147,12 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+EASY_MAPS_GOOGLE_MAPS_API_KEY = "AIzaSyASJRQ36GMooqAr0FRM5xxovulLxrxhbu8"
+
+#EASY_MAPS_CENTER = (-41.3, 32)
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 1100
+
 
