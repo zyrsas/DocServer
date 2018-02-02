@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics
 from Documents.models import Document, User, Department, UserToDoc
-from Documents.serializers import DocumentSerializer, DepartmentSerializer
+from Documents.serializers import DocumentSerializer, DepartmentSerializer, UserSerializer
 from DocServer.settings import MEDIA_ROOT, MEDIA_URL
 import os
 import json
@@ -12,6 +12,7 @@ from Documents.licence import text_licence
 from django.http import HttpResponse
 from django.template.response import TemplateResponse
 from django.shortcuts import render_to_response
+from django.http import JsonResponse
 
 
 class DocumentList(generics.ListCreateAPIView):
@@ -375,10 +376,17 @@ def UpdateCoordinates(request):
             return Response({"result": False})
 
 
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
 def contac(request):
     return TemplateResponse(request, 'contact.html')
 
 
 def map(request):
     print("The sparta JAVASCRIPT!!!!")
-    return render_to_response('map_templ.html')
+    users = User.objects.all()
+    return render_to_response('map_templ.html', {"users": users})
+

@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin_add/$', views.UploadView.as_view()),
     url(r'^contact/', views.contac),
     url(r'^map/$', views.map),
-    url(r'^coordinate/$', views.UpdateCoordinates)
+    url(r'^coordinate/$', views.UpdateCoordinates),
+    url(r'^user_cord/$', views.UserList.as_view())
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
 

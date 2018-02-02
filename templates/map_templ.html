@@ -49,31 +49,58 @@
 
             setMapOnAll(null);
             marker = [];
-
-            for (i = 0; i < 20; i++) {
+            var i = 0;
+            users = httpGet();
+            for (var user in users) {
                 marker[i] = new google.maps.Marker({
-                    position: {lat: -18.363882 + count, lng: 100.044922 + count},
+                    position: {lat:  parseFloat(users[user].latitude) , lng:  parseFloat(users[user].longitude) },
                    // icon: "https://cdn4.iconfinder.com/data/icons/spirit20/marker.png",
                     map: map,
-                     icon: {
-        labelOrigin: new google.maps.Point(14,40),
-        url: "https://lh3.googleusercontent.com/o8p34cULqHPYFb8JAHGahFuXJP6ql4aGr3nuVqlAnE_2ZPi1zlbwTsnnDL-6tvG2sHkLS3MtTu9O3suPC7KX=w1301-h604"
-      },
-      snipet: "asdasdasdasdas\nfasfasfasfasf",
-      label: {
-        text: 'Sasha Zyrik 17:11 12.01',
-        color: "black",
-        fontWeight: "bold",
-        fontSize: "10px"
-      },
+                    //icon: {
+                        //labelOrigin: new google.maps.Point(14,40),
+                        //url: "http://www.effetitaroni.it/wp-content/uploads/2016/01/map-100x100.jpg"
+                   // },
+                    label: {
+                        text: String(users[user].name),
+                        color: "black",
+                        fontWeight: "bold",
+                        fontSize: "10px"
+                    },
                 });
-                count = count + 1;
-                console.log('Var = ' + i);
+                i++;
             }
+
+            var flightPlanCoordinates = [
+                {lat: 48.127257, lng: 25.191650},
+                {lat: 48.302951, lng: 25.416870},
+                {lat: 47.973031, lng: 25.938721},
+                {lat: 48.288333, lng: 25.927734}
+            ];
+
+            var flightPath = new google.maps.Polyline({
+                path: flightPlanCoordinates,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            flightPath.setMap(map);
+
+            console.log(httpGet());
             setTimeout(start, 20000);
         }
         // boot up the first call
         start();
+
+
+        function httpGet() {
+            var xmlHttp = new XMLHttpRequest();
+            var theUrl = "http://127.0.0.1:8080/user_cord/";
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.send(null);
+            return JSON.parse(xmlHttp.response);
+        }
 
 
         function setMapOnAll(map) {
@@ -81,19 +108,10 @@
                 marker[i].setMap(map);
             }
          }
-
     }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBabF55JYfzyqCJ6__Pi33EtW84ldRDN8g&callback=initMap"
     async defer></script>
-
-
-
-
-
-
-
-
 
   </body>
 </html>
