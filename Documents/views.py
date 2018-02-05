@@ -6,13 +6,11 @@ from Documents.models import Document, User, Department, UserToDoc
 from Documents.serializers import DocumentSerializer, DepartmentSerializer, UserSerializer
 from DocServer.settings import MEDIA_ROOT, MEDIA_URL
 import os
-import json
 from hurry.filesize import size, alternative
 from Documents.licence import text_licence
 from django.http import HttpResponse
 from django.template.response import TemplateResponse
 from django.shortcuts import render_to_response
-from django.http import JsonResponse
 
 
 class DocumentList(generics.ListCreateAPIView):
