@@ -2,8 +2,208 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68c34f70-770c-4a79-84d4-a56bed882337" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/MaterialIcons-Regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/MaterialIcons-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/MaterialIcons-Regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/MaterialIcons-Regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Black.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BlackItalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BlackItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BlackItalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BlackItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Bold.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Bold.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Bold.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BoldItalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BoldItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BoldItalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-BoldItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Light.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Light.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Light.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Light.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-LightItalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-LightItalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-LightItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Medium.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Medium.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Medium.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Medium.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-MediumItalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-MediumItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-MediumItalic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-MediumItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Thin.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Thin.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Thin.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-Thin.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-ThinItalic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-ThinItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/fonts/Roboto-ThinItalic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/imgs/favicon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/imgs/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/imgs/user.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/font/material-design-icons/Material-Design-Icons.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/font/material-design-icons/Material-Design-Icons.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/font/roboto/Roboto-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/font/roboto/Roboto-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/font/roboto/Roboto-Thin.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/Alan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/alex.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/alvin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/bold.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/kmaterialize.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/m-logo-salmon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/materialize.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/materialize_team.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/menu.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/metaphor.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/office.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/parallax-template.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/parallax1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/parallax2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/responsive.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/sample-1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/starter-template.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/images/yuna.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/fixedHeader.dataTables.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/jquery.datetimepicker.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/material.forms.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/materialize.admin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/materialize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/materialize.forms.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/materialize.frontend.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/materialize.frontend.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/perfect-scrollbar.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/css/responsive.dataTables.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/MaterialIcons-Regular.ijmap" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/MaterialIcons-Regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/codepoints" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/material-design-icons/material-icons.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto-black.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto-bold.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto-italic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto-medium-italic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto-medium.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto-thin-italic.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto-thin.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/roboto.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/fonts/roboto/style.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/imgs/background.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/imgs/sidenav.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/dataTables.fixedHeader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/dataTables.responsive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/jquery.activeNavigation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/jquery.dataTables.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/jquery.datetimepicker.full.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/jquery.formset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/materialize.frontend.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/materialize.frontend.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/materialize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/perfect-scrollbar.jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/js/turbolinks.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/sass/materialize.admin.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/sass/materialize.forms.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/sass/materialize.frontend.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/material/sass/materialize.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/about.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/badges.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/bin/materialize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/bin/materialize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/buttons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/cards.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/collapsible.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/collections.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/css/ghpages-materialize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/css/prism.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/dialogs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/dropdown.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/font/material-design-icons/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/font/material-design-icons/Material-Design-Icons.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/footer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/fullscreen-slider-demo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/getting-started.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/grid.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/helpers.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/icons.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/_navbar.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/badges.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/buttons.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/collapsible.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/collections.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/color.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/dropdown.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/footer.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/fullscreen-slider-demo.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/getting-started.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/grid.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/helpers.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/icons.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/media.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/mobile.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/modals.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/navbar.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/parallax-demo.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/parallax.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/preloader.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/pushpin.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/shadow.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/showcase.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/sideNav.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/table.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/tabs.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/typography.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/jade/waves.jade" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/cards.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/collapsible.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/date_picker/picker.date.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/date_picker/picker.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/forms.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/hammer.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/init.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/jquery.easing.1.3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/jquery.hammer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/jquery.timeago.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/leanModal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/materialbox.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/prism.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/sideNav.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/tabs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/toasts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/tooltip.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/js/velocity.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/media-css.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/media.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/navbar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/parallax-demo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/parallax.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/preloader.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/pushpin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/sass.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/scrollspy.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/shadow.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/showcase.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/side-nav.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/tabs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/typography.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/materialize/waves.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documents/views.py" afterPath="$PROJECT_DIR$/Documents/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DocServer/settings.py" afterPath="$PROJECT_DIR$/DocServer/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/map_templ.html" afterPath="$PROJECT_DIR$/templates/map_templ.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,11 +274,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DocServer/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="30" />
+            <state relative-caret-position="-180">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -86,12 +286,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map_templ.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DocServer/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-442">
+              <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="map_templ.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/map_templ.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="116" column="7" lean-forward="true" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
+            <state relative-caret-position="-160">
+              <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Documents/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="388" column="52" lean-forward="true" selection-start-line="388" selection-start-column="52" selection-end-line="388" selection-end-column="52" />
+              <folding>
+                <element signature="e#23#67#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +321,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Documents/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
+            <state relative-caret-position="3380">
               <caret line="176" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="265" selection-end-column="47" />
               <folding />
             </state>
@@ -109,7 +331,7 @@
       <file leaf-file-name="licence.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Documents/licence.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1680">
+            <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -119,7 +341,7 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Documents/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
+            <state relative-caret-position="560">
               <caret line="29" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
@@ -142,28 +364,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tests.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Documents/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Documents/serializers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="17" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -234,13 +434,13 @@
         <option value="$PROJECT_DIR$/templates/contact.html" />
         <option value="$PROJECT_DIR$/templates/easy_maps/responsive.html" />
         <option value="$PROJECT_DIR$/templates/map.html" />
-        <option value="$PROJECT_DIR$/DocServer/settings.py" />
         <option value="$PROJECT_DIR$/Documents/models.py" />
         <option value="$PROJECT_DIR$/Documents/admin.py" />
         <option value="$PROJECT_DIR$/Documents/serializers.py" />
-        <option value="$PROJECT_DIR$/templates/map_templ.html" />
         <option value="$PROJECT_DIR$/Documents/views.py" />
         <option value="$PROJECT_DIR$/DocServer/urls.py" />
+        <option value="$PROJECT_DIR$/DocServer/settings.py" />
+        <option value="$PROJECT_DIR$/templates/map_templ.html" />
       </list>
     </option>
   </component>
@@ -251,10 +451,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="651" />
-    <option name="height" value="744" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1305" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -272,7 +472,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -319,11 +519,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="easy_maps" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,7 +553,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -687,18 +883,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="651" height="744" extended-state="4" />
+    <frame x="64" y="-11" width="1305" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29917356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5099602" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37685952" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36271188" sideWeight="0.49003986" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36245954" sideWeight="0.49003986" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31229773" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23070803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37685952" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@DocServer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47249192" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45954692" sideWeight="0.49561754" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32669324" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -711,7 +908,6 @@
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.49721116" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@DocServer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47249192" sideWeight="0.49721116" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686085" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
     </layout>
@@ -897,7 +1093,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,22 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DocServer/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1940">
-          <caret line="97" column="43" lean-forward="false" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Documents/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="390" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Documents/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -943,7 +1122,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Documents/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
+        <state relative-caret-position="320">
           <caret line="17" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="64" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
@@ -961,7 +1140,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Documents/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
+        <state relative-caret-position="3380">
           <caret line="176" column="12" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="265" selection-end-column="47" />
           <folding />
         </state>
@@ -969,7 +1148,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Documents/licence.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1680">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -993,27 +1172,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Documents/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
+        <state relative-caret-position="560">
           <caret line="29" column="19" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/map_templ.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="116" column="7" lean-forward="true" selection-start-line="116" selection-start-column="7" selection-end-line="116" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DocServer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="30" />
+        <state relative-caret-position="-180">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DocServer/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Documents/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="388" column="52" lean-forward="true" selection-start-line="388" selection-start-column="52" selection-end-line="388" selection-end-column="52" />
+          <folding>
+            <element signature="e#23#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/map_templ.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

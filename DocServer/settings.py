@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'db_file_storage',
     'bootstrap4',
     'easy_maps',
+    'material',
+    'materialize',
+    'material.frontend',
 ]
 
 SITE_ID = 1
