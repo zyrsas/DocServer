@@ -384,7 +384,18 @@ def contac(request):
 
 
 def map(request):
-    print("The sparta JAVASCRIPT!!!!")
+    import googlemaps
+
+    gmaps = googlemaps.Client(key='AIzaSyBabF55JYfzyqCJ6__Pi33EtW84ldRDN8g')
+
+    # Look up an address with reverse geocoding
+    address_list = []
     users = User.objects.all()
-    return render_to_response('map_templ.html', {"users": users})
+    for user in list(users):
+        reverse_geocode_result = gmaps.reverse_geocode((user.latitude, user.longitude))
+        address = str((list(reverse_geocode_result)[0]['formatted_address']))
+        address_list.append(address)
+    print(address_list)
+    ziped_add = zip(users, address_list)
+    return render_to_response('map_templ.html', {"users": address_list, "address": ziped_add})
 
